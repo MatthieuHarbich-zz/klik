@@ -1,0 +1,96 @@
+
+@grid-columns: 33;
+@bottomBarHeight: 80px;
+#projects{
+	margin-top:10px;
+}
+.project {
+   	margin-bottom: 10px;
+ 	height: 80px;
+    background-color: #C5EFF7;
+    cursor:pointer; 
+    text-align: center;
+    color:white;
+    line-height: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    &:hover{
+    	background-color: #3498db;
+    }
+}
+
+.delete{
+	width:20px;
+	height: 20px;
+	background-color: #ED9B93;
+	position:absolute;
+	color:white;
+	text-align: center;
+	top:0;
+	right:0;
+	&:hover{
+		background-color: #EF4836;
+	}
+	span{
+		position: absolute;
+		font-size: 0.6em;
+		top:3px;
+		right:3px;
+	}
+}
+
+#bottomBar{
+	position:absolute;
+	padding:0;
+	height: @bottomBarHeight;
+	bottom:0;
+	.hoverText{
+		display:none;
+		line-height: @bottomBarHeight;
+		font-size: 1.3em;
+		font-weight: bold;
+		color:white;
+	}
+	#addProject{	
+		height:@bottomBarHeight;
+		background-color: #81CFE0;
+		text-align: center;
+		cursor:pointer;
+		.glyphicon{
+			line-height: (@bottomBarHeight - 1);
+			color:white;
+			font-size: 1.5em;			
+		}
+		&:hover{
+			.glyphicon{
+				display:none;
+			}
+			.hoverText{
+				display:block;
+			}
+		}
+	}
+
+	#logout{
+		height: 80px;
+		background-color: #EF4836;
+		cursor:pointer;
+		text-align: center;
+		.glyphicon{
+			line-height: (@bottomBarHeight - 1);
+			color:white;
+			font-size: 2em;			
+		}
+		&:hover{
+			.glyphicon{
+				display:none;
+			}
+			.hoverText{
+				display:block;
+			}
+		}
+	}
+}
+
+

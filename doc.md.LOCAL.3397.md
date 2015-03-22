@@ -13,4 +13,4 @@ Du côté serveur:
 	- Mongodb
 	- Socketio
 
-Angular: 
+Angular: s

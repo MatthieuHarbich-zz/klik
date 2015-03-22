@@ -1,0 +1,25 @@
+
+#projects
+	.col-md-7.col-md-offset-1.project(ng-repeat="project in projects") {{project.name}}
+		.delete(ng-click='openDialog(project)')
+			span(class="glyphicon glyphicon-remove", aria-hidden="false")
+	form(ng-submit="addProject()")
+		input(ng-model="newProjectName",type="text", placeholder="new project")
+	
+
+#bottomBar.col-md-33
+	#addProject.col-md-30
+		span(class="glyphicon glyphicon-plus", aria-hidden="false")
+		span.hoverText Add a new project
+
+	#logout.col-md-3
+		span(class="glyphicon glyphicon-log-out", aria-hidden="false")
+		span.hoverText Logout
+
+
+script(type="text/ng-template", id="closeTmpl.html") 
+	h3 Are you sure?!
+	button.btn.btn-danger(ng-click='closeThisDialog(); deleteProject(project)') Yes!
+	button.btn.btn-primary(ng-click='closeThisDialog()') Nooo!
+
+
