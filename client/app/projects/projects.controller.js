@@ -34,7 +34,7 @@ angular.module('klikApp')
                   callback(err);
                 });
           }
-        }
+        };
         
 
   })
@@ -47,7 +47,7 @@ angular.module('klikApp')
 
       } else{
         $scope.projects = projects;
-      };
+      }
     });
 
 
@@ -57,7 +57,7 @@ angular.module('klikApp')
 
         ngDialog.open({ template: 'closeTmpl.html', scope: $scope  });
         
-    }
+    };
 
     $scope.deleteProject = function(project){
 
@@ -67,7 +67,7 @@ angular.module('klikApp')
         $scope.projects.splice(index,1);
         
 
-    }
+    };
 
     $scope.addProject = function(){
     	var newProject = {
@@ -85,10 +85,10 @@ angular.module('klikApp')
         console.log(err);
       } else{     
         _.last($scope.projects)._id = project._id;
-      };
+      }
     });
 
         
     	// console.log($scope.projects);
-    }
+    };
   });

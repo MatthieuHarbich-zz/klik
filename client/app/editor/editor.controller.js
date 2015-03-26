@@ -6,7 +6,7 @@ angular.module('klikApp')
 
 	var projectId = $stateParams.projectId;
 
-    var project = $http.get('/api/projects/' + projectId).success(function(project){
+    $http.get('/api/projects/' + projectId).success(function(project){
     	$scope.project = project;    	
     });
 

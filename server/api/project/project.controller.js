@@ -22,12 +22,13 @@ exports.show = function(req, res) {
 
 // Get the last project
 exports.last = function(req, res) {
-Project.find(function (err, projects) {
-    if(err) { return handleError(res, err); };
 
-    console.log( _.last(projects));
-    return res.json(200,  _.last(projects));
-  });
+  Project.find(function (err, projects) {
+      if(err) { return handleError(res, err); }
+
+      
+      return res.json(200,  _.last(projects));
+    });
     
      
   
