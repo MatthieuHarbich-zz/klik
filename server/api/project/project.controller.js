@@ -20,6 +20,19 @@ exports.show = function(req, res) {
   });
 };
 
+// Get the last project
+exports.last = function(req, res) {
+Project.find(function (err, projects) {
+    if(err) { return handleError(res, err); };
+
+    console.log( _.last(projects));
+    return res.json(200,  _.last(projects));
+  });
+    
+     
+  
+};
+
 // Creates a new project in the DB.
 exports.create = function(req, res) {
   Project.create(req.body, function(err, project) {

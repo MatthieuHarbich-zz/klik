@@ -1,8 +1,10 @@
 
 #projects
-	.col-md-7.col-md-offset-1.project(ng-repeat="project in projects") {{project.name}}
+	.projectContainer.col-md-7.col-md-offset-1(ng-repeat="project in projects")
+		.project(ui-sref="editor({ projectId: project._id })") {{project.name}}
 		.delete(ng-click='openDialog(project)')
 			span(class="glyphicon glyphicon-remove", aria-hidden="false")
+
 	form(ng-submit="addProject()")
 		input(ng-model="newProjectName",type="text", placeholder="new project")
 	
