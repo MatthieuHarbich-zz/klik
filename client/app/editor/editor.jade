@@ -1,1 +1,8 @@
 h1 {{project.name}}
+
+.i
+	{{project.number}}
+
+input(ng-model="newWord")
+button(ng-controller="SocketTestCtrl", ng-click="change(newWord)") change word
+

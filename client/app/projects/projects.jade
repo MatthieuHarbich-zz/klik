@@ -11,10 +11,14 @@
 
 #bottomBar.col-md-33
 	#addProject.col-md-30
-		span(class="glyphicon glyphicon-plus", aria-hidden="false")
-		span.hoverText Add a new project
+		//- span(class="glyphicon glyphicon-plus", aria-hidden="false")
+		//- span.hoverText Add a new project
+		form.col-md-33(ng-submit="addProject()")
+			input.col-md-6(type="text").col-md-offset-3(ng-model="newProjectName", placeholder="new project")
+			input.col-md-7.col-md-offset-3(ng-model="newProjectFile", type="file")
 
-	#logout.col-md-3
+
+	#logout.col-md-3(ng-controller="LoginCtrl", ng-click="logout()")
 		span(class="glyphicon glyphicon-log-out", aria-hidden="false")
 		span.hoverText Logout
 

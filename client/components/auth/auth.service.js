@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('klikApp')
-  .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore, $q) {
+  .factory('Auth', function Auth($location, $state, $rootScope, $http, User, $cookieStore, $q) {
     var currentUser = {};
     if($cookieStore.get('token')) {
       currentUser = User.get();
@@ -47,6 +47,8 @@ angular.module('klikApp')
       logout: function() {
         $cookieStore.remove('token');
         currentUser = {};
+
+        $state.go('login');
       },
 
       /**

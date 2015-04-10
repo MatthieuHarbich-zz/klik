@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Project = require('./project.model');
+var MediaConverter = require("html5-media-converter");
 
 // Get list of projects
 exports.index = function(req, res) {
@@ -38,6 +39,9 @@ exports.last = function(req, res) {
 exports.create = function(req, res) {
   Project.create(req.body, function(err, project) {
     if(err) { return handleError(res, err); }
+    var mc = new MediaConverter();
+
+    mc.convert("client/assests/videos/projects/video.mp4" , "200x200", "client/assests/videos/projects")
     return res.json(201, project);
   });
 };

@@ -23,4 +23,9 @@ angular.module('klikApp')
       }
     };
 
+    $scope.logout = function(){
+      Auth.logout();
+      
+    };
+
   });
